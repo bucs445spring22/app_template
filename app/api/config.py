@@ -5,6 +5,8 @@ class Config:
     DEBUG = os.environ.get("FLASK_DEBUG", False)
     FLASK_ENV = os.environ.get("FLASK_ENV", 'development')
     SECRET_KEY = os.environ.get("SECRET_KEY", "none")
+    HOST=os.environ.get('HOST', '0.0.0.0')
+    PORT=os.environ.get('PORT', 80)
 
 class ProdConfig(Config):
     FLASK_ENV = 'production'

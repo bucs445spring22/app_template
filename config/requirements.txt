@@ -4,7 +4,6 @@ gunicorn
 pytest
 coverage
 tinydb
-libsass
 
 ###### Requirements with Version Specifiers ######
 Flask>=2.0

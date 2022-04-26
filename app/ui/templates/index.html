@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Template</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <section>
+            <div>
+              <nav>
+                  <div>
+                    <a>Template</a>
+                  </div>
+              </nav>
+            </div>
+            <div>
+                <div>
+                    <ul>
+                    {% for u, i in users.items() %}
+                        <li>{{u}}
+                            <ul>
+                                <li>email: {{i[0]}}</li>
+                                <li>Age: {{i[1]}}</li> 
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div>
+                    <form>
+                        <input name="name", type="text" placeholder="name">
+                        <input name="email", type="email" placeholder="email@email.com">
+                        <input type="submit">
+                    </form>
+                </div>
+                {% if verified %}
+                <div>
+                    <h1>It verifies</h1>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        <!-- Local JavaScript -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </body>
+
+</html>
