@@ -16,12 +16,13 @@ with contextlib.suppress(OSError):
 
 @app.route('/', methods=('GET', 'POST'))
 def index():
-    
+    #GET REQUEST - gets data
     response = requests.get("http://api:8000/users")
     users = response.json()
     name= request.args.get('name')
     email = request.args.get('email')
     verified = False
+    #POST REQUEST - sends data
     if name and email:
         data = {'name':name, 'email':email}
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
